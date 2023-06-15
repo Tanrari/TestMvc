@@ -6,21 +6,22 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.List;
+
 @Transactional(readOnly = true)
 @Service("singerService")
 public class SingerServiceImpl implements SingerService{
 
     private SingerRepository singerRepository;
 
-    public SingerRepository getSingerRepository() {
-        return singerRepository;
-    }
-    @Autowired
-    public void setSingerRepository(SingerRepository singerRepository) {
-        this.singerRepository = singerRepository;
-    }
+//    public SingerRepository getSingerRepository() {
+//        return singerRepository;
+//    }
+//
+//    @Autowired
+//    public void setSingerRepository(SingerRepository singerRepository) {
+//        this.singerRepository = singerRepository;
+//    }
 
     @Override
     @Transactional(readOnly = true)
