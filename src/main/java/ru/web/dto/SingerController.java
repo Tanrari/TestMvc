@@ -16,21 +16,21 @@ import java.util.List;
 public class SingerController {
     private final Logger logger = Logger.getLogger(SingerController.class);
 
-//    private SingerService singerService;
-    private MessageSource messageSource;
+    private SingerService singerService;
+//    private MessageSource messageSource;
 
-    @RequestMapping(method = RequestMethod.GET,value = "singers/list")
+    @RequestMapping(method = RequestMethod.GET,value = "/list")
     public String list(Model model){
-        System.out.println("111111111");
+//        System.out.println("111");
         logger.info("Listing singers");
-//        List<Singer> singers = singerService.findAll();
-//        model.addAttribute("singers", singers);
-//        logger.info("No. of singers"+singers.size());
-        return "/list";
+        List<Singer> singers = singerService.findAll();
+        model.addAttribute("singers", singers);
+        logger.info("No. of singers"+singers.size());
+        return ";l,";
     }
 
-//    @Autowired
-//    public void setSingerService(SingerService singerService){
-//        this.singerService = singerService;
-//    }
+    @Autowired
+    public void setSingerService(SingerService singerService){
+        this.singerService = singerService;
+    }
 }

@@ -32,7 +32,7 @@ public class Singer implements Serializable {
 
     @Temporal(TemporalType.DATE)
     @Column(name = "BIRTH_DATE")
-    private Date birthDate;
+    private java.util.Date birthDate;
 
     @Column(name = "DESCRIPTION")
     private String description;
@@ -74,11 +74,11 @@ public class Singer implements Serializable {
         this.lastName = lastName;
     }
 
-    public Date getBirthDate() {
+    public java.util.Date getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(java.util.Date birthDate) {
         this.birthDate = birthDate;
     }
 
