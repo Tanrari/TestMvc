@@ -7,17 +7,13 @@ import javax.servlet.Filter;
 public class WebInitializer  extends AbstractAnnotationConfigDispatcherServletInitializer {
 
 
-//    @Override
-//    protected Class<?>[] getRootConfigClasses() {
-//        return new Class<?>[]{
-//       DataServiceConfig.class
-//        };
-//    }
-
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[0];
+        return new Class<?>[]{
+       DataServiceConfig.class
+        };
     }
+
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
@@ -35,6 +31,7 @@ public class WebInitializer  extends AbstractAnnotationConfigDispatcherServletIn
     @Override
     protected Filter[] getServletFilters() {
         CharacterEncodingFilter cef = new CharacterEncodingFilter();
+
         cef.setEncoding("UTF-8");
         cef.setForceEncoding(true);
         return new Filter[]{

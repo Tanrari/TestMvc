@@ -14,10 +14,10 @@ public class SingerServiceImpl implements SingerService{
 
     private SingerRepository singerRepository;
 
-//    public SingerRepository getSingerRepository() {
-//        return singerRepository;
-//    }
-//
+    public SingerRepository getSingerRepository() {
+        return singerRepository;
+    }
+
     @Autowired
     public void setSingerRepository(SingerRepository singerRepository) {
         this.singerRepository = singerRepository;

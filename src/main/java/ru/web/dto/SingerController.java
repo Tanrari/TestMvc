@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
-//@RequestMapping("/singers")
+@RequestMapping("/singers")
 @Controller
 public class SingerController {
     private final Logger logger = Logger.getLogger(SingerController.class);
@@ -17,7 +17,7 @@ public class SingerController {
     private SingerService singerService;
 //    private MessageSource messageSource;
 
-    @RequestMapping(method = RequestMethod.GET,value = "/list")
+    @RequestMapping(method = RequestMethod.GET)
     public String list(Model model){
 //        System.out.println("111");
         logger.info("Listing singers");
