@@ -10,18 +10,18 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @ComponentScan(basePackages = {"ru"})
 public class WebConfig implements WebMvcConfigurer {
 
-//    @Override
-//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-//        registry.addResourceHandler("/resources/**")
-//                .addResourceLocations("/")
-//                .setCachePeriod(31556926);
-//    }
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/resources/**")
+                .addResourceLocations("/")
+                .setCachePeriod(31556926);
+    }
 
     @Bean
     InternalResourceViewResolver viewResolver(){
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
         resolver.setPrefix("/WEB-INF/views/singers/");
-        resolver.setSuffix(".html");
+        resolver.setSuffix(".jspx");
 //        resolver.setRequestContextAttribute("requestContext");
         return resolver;
     }
@@ -31,8 +31,8 @@ public class WebConfig implements WebMvcConfigurer {
 //        registry.addViewController("/").setViewName("list");
 //    }
 
-//    @Override
-//    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer){
-//        configurer.enable();
-//    }
+    @Override
+    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer){
+        configurer.enable();
+    }
 }

@@ -117,7 +117,7 @@ public class Singer implements Serializable {
                 ", lastName='" + lastName + '\'' +
                 ", birthDate=" + birthDate +
                 ", description='" + description + '\'' +
-                ", photo=" + photo +
+//                ", photo=" + photo +
                 '}';
     }
 }

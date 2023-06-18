@@ -18,10 +18,10 @@ public class SingerServiceImpl implements SingerService{
 //        return singerRepository;
 //    }
 //
-//    @Autowired
-//    public void setSingerRepository(SingerRepository singerRepository) {
-//        this.singerRepository = singerRepository;
-//    }
+    @Autowired
+    public void setSingerRepository(SingerRepository singerRepository) {
+        this.singerRepository = singerRepository;
+    }
 
     @Override
     @Transactional(readOnly = true)
