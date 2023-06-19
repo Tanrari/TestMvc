@@ -4,15 +4,23 @@
      xmlns:spring="http://www.springframework.org/tags"
      xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"    version="2.0">
 
-    <h1>Singer Listing</h1>
+    <jsp:directive.page contentType="text/html; charset = UTF-8"/>
+    <jsp:output omit-xml-declaration="true"/>
+    <spring:message code="label_singer_list" var="label SingerList"/>
+    <spring:message code="label_singer_first_name" var="labelSingerFirstName"/>
+    <spring:message code="label_singer_last_name" var="labelSingerLastName"/>
+    <spring:message code="label_singer_birth_date" var="labelSingerBirthDate"/>
+
+
+    <h1>${label SingerList}</h1>
 <!--    <jsp:useBean id="singers" scope="request" type=""/>-->
     <c:if test="${not empty singers}">
         <table>
             <thread>
                 <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Birth Date</th>
+                    <th>${labelSingerFirstName}</th>
+                    <th>${labelSingerLastName}</th>
+                    <th>${labelSingerBirthDate}</th>
                 </tr>
             </thread>
             <tbody>

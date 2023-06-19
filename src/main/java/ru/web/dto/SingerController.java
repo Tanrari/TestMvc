@@ -1,5 +1,4 @@
 package ru.web.dto;
-
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,7 +18,6 @@ public class SingerController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String list(Model model){
-//        System.out.println("111");
         logger.info("Listing singers");
         List<Singer> singers = singerService.findAll();
         model.addAttribute("singers", singers);
