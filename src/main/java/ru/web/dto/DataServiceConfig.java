@@ -44,6 +44,7 @@ public class DataServiceConfig {
             dataSource.setUrl(url);
             dataSource.setUsername(username);
             dataSource.setPassword(password);
+            System.out.println(driverClassName+ url);
             return dataSource;
         }catch (Exception ex){
             logger.error("DBCP DataSource bean cannot be created",ex);

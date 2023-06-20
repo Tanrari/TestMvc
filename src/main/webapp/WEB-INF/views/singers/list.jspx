@@ -17,6 +17,7 @@
         <link rel = "stylesheet" type = "text/css" media="screen" href="${app_css_url}"/>
     </head>
     <h1>${labelSingerList}</h1>
+        <spring:url value="/singers" var="showSingerUrl"/>
 <!--    <jsp:useBean id="singers" scope="request" type=""/>-->
     <c:if test="${not empty singers}">
         <table>
@@ -30,6 +31,9 @@
             <tbody>
             <c:forEach items="${singers}" var="singer">
                 <tr>
+                    <td>
+                        <a href="${showSingerUrl}/${singer.id}"> ${singer.firstName}</a>
+                    </td>
                     <td>${singer.firstName}</td>
                     <td>${singer.lastName}</td>
                     <td>
