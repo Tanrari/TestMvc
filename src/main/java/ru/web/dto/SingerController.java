@@ -22,7 +22,7 @@ public class SingerController {
         List<Singer> singers = singerService.findAll();
         model.addAttribute("singers", singers);
         logger.info("No. of singers"+singers.size());
-        return "list";
+        return "singers/list";
     }
 
     @Autowired
