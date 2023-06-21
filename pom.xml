@@ -26,6 +26,7 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+
     <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
     <dependency>

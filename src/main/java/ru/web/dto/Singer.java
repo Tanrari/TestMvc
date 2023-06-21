@@ -34,6 +34,7 @@ public class Singer implements Serializable {
 
     @NotNull
     @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     @Column(name = "BIRTH_DATE")
     private java.util.Date birthDate;
 

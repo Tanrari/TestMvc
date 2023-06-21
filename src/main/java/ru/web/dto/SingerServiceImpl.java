@@ -32,6 +32,7 @@ public class SingerServiceImpl implements SingerService{
     @Override
     @Transactional(readOnly = true)
     public Singer findById(Long id) {
+//        System.out.println(singerRepository.findById(id).get().toString());
         return singerRepository.findById(id).get();
     }
 

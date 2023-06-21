@@ -60,11 +60,11 @@
                 <form:errors path="lastName" cssClass="error" />
             </div>
             <p/>
-
-            <form:label path="birthDate">
+            <form:label path="birthDate" >
                 ${labelSingerBirthDate}
             </form:label>
             <form:input path="birthDate" id="birthDate"/>
+
             <div>
                 <form:errors path="birthDate" cssClass="error" />
             </div>
