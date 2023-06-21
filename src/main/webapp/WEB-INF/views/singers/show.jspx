@@ -24,7 +24,8 @@
     <div id="singerInfo">
 
         <c:if test="${not empty message}">
-            <div id="message" class="${message.type}">${message.message}</div>
+            <div id="message" class="${message.type}">
+                ${message.message}</div>
         </c:if>
 
         <table>
