@@ -2,6 +2,7 @@ package ru.web.dto;
 import com.sun.deploy.util.URLUtil;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cglib.core.Local;
 import org.springframework.context.MessageSource;
 import org.springframework.security.web.util.UrlUtils;
 import org.springframework.stereotype.Controller;
@@ -66,25 +67,32 @@ public class SingerController {
         return "singers/update";
     }
 
-    @RequestMapping(method = RequestMethod.POST)
-    public String create(@Valid Singer singer,BindingResult bindingResult,
-                         Model uiModel,HttpServletRequest httpServletRequest,
-                         RedirectAttributes redirectAttributes,
-                         Locale locale){
-        logger.info("Creating singer");
-        if(bindingResult.hasErrors()){
-            uiModel.addAttribute("message",new Message("error",
-                    messageSource.getMessage("singer_save_fail",new Object[]{},locale)));
-            uiModel.addAttribute("singer",singer);
-            return "singers/create";
-        }
 
+    @RequestMapping(method = RequestMethod.POST)
+    public String create(@Valid Singer singer, BindingResult bindingResult, Model uiModel,
+                         HttpServletRequest httpServletRequest,
+                         RedirectAttributes redirectAttributes, Locale locale){
+        logger.info("Creating singer");
+        if (bindingResult.hasErrors()){
+            uiModel.addAttribute("message", new Message("error",
+                    messageSource.getMessage("singer_save_fail", new Object[]{}, locale)));
+                uiModel.addAttribute("singer", singer);
+                return "singers/create";
+        }
         uiModel.asMap().clear();
-        redirectAttributes.addFlashAttribute("message",new Message("success",
+        redirectAttributes.addFlashAttribute("message", new Message("success",
                 messageSource.getMessage("singer_save_success", new Object[]{},locale)));
-        logger.info("Singer id: "+singer.getId());
+        logger.info("Singer id:"+ singer.getId());
         singerService.save(singer);
         return "redirect:/singers/";
+
+    }
+
+    @RequestMapping(params = "form", method = RequestMethod.GET)
+    public String createForm(Model uiModel){
+        Singer singer = new Singer();
+        uiModel.addAttribute("singer", singer);
+        return "singers/create";
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -105,11 +113,13 @@ public class SingerController {
         return "singers/show";
     }
 
-    @RequestMapping(params = "form", method = RequestMethod.GET)
-    public String createForm(Model uiModel){
-        Singer singer = new Singer();
-        uiModel.addAttribute("singer",singer);
-        return "singers/create";
+    @RequestMapping(value = "/{id}", params = "delete", method = RequestMethod.GET)
+    public String delete(@PathVariable("id") Long id){
+        logger.info("+123");
+        System.out.println("11123123");
+//        singerService.delete(id);
+        return "singers";
+
     }
 
 

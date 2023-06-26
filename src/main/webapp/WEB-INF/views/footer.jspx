@@ -8,8 +8,9 @@
     <spring:message code="label_en_US" var="labelEnUs"/>
     <spring:message code="label_zh_HK" var="labelZhHk"/>
     <spring:url value="/singers" var="homeUrl"/>
-
+    <spring:url value="/singers" var="showSingerUrl"/>
     <a href="${homeUrl}">${homeText}</a> |
     <a href="${homeUrl}?locale=en_US">${labelEnUs}</a> |
     <a href="${homeUrl}?locale=zh_HK">${labelZhHk}</a>
+    <a href="${showSingerUrl}/${singer.id}"></a>
 </div>

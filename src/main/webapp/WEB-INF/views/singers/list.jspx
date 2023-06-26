@@ -18,7 +18,6 @@
     </head>
     <h1>${labelSingerList}</h1>
         <spring:url value="/singers" var="showSingerUrl"/>
-<!--    <jsp:useBean id="singers" scope="request" type=""/>-->
     <c:if test="${not empty singers}">
         <table>
             <thread>

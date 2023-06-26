@@ -36,13 +36,13 @@
     <spring:eval expression="singer.id == null ? labelSingerNew:labelSingerUpdate" var="formTitle"/>
 
     <h1>${formTitle}</h1>
-
+    <spring:url value="/singers" var="deleteSingerUrl"/>
+    <spring:url value="${deleteSingerUrl}/${singer.id}?delete" var="deleteUrl"/>
     <div id="singerUpdate">
         <form:form modelAttribute="singer" id="singerUpdateForm" method="post">
             <c:if test="${not empty message}">
                 <div id="message" class="${message.type}">${message.message}</div>
             </c:if>
-
             <form:label path="firstName">
                 ${labelSingerFirstName}*
             </form:label>
@@ -51,7 +51,6 @@
                 <form:errors path="firstName" cssClass="error" />
             </div>
             <p/>
-
             <form:label path="lastName">
                 ${labelSingerLastName}*
             </form:label>
@@ -84,15 +83,15 @@
             </label>
             <input name="file" type="file"/>
             <p/>
-
             <form:hidden path="version" />
 
-            <button type="submit" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">
-                <span class="ui-button-text">Save</span>
-            </button>
-            <button type="reset" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">
-                <span class="ui-button-text">Reset</span>
-            </button>
-        </form:form>
+            <button type="submit">Save</button>
+            <button type="reset">Reset</button>
+<!--           <a href="${deleteUrl}">Start</a>-->
+<!--            <input type="button"  onclick="location.href="${deleteUrl}" value="Register" >-->
+            <form action="${deleteUrl}" method="get">
+                <input type="submit" name="button1" value="Button 1" />
+            </form>
+           </form:form>
     </div>
 </div>

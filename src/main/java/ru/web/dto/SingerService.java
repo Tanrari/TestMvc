@@ -10,5 +10,6 @@ public interface SingerService  {
     Singer findById(Long id);
     Singer save(Singer singer);
     Page<Singer> findAllPage(Pageable pageable);
+    void delete(Long id);
 
 }
