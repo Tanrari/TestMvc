@@ -7,10 +7,11 @@
     <jsp:output omit-xml-declaration="yes" />
     <spring:message code="menu_header_text" var="menuHeaderText"/>
     <spring:message code="menu_add_singer" var="menuAddsinger"/>
+    <spring:url value="/singers/?create" var="createSinger"/>
 <!--    <spring:url value="/singers?form" var="addsingerUrl"/>-->
 
     <h3>${menuHeaderText}</h3>
 
-        <a href="${addsingerUrl}"><h3>${menuAddsinger}</h3></a>
-
+        <a href="${createSinger}">${menuAddsinger}</a>
+<!--    <h3>${menuAddsinger}</h3>-->
 </div>

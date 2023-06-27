@@ -50,4 +50,6 @@ public class SingerServiceImpl implements SingerService{
     public void delete(Long id){
         singerRepository.deleteById(id);
     }
+
+
 }

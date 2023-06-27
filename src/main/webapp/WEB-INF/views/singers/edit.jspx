@@ -87,11 +87,11 @@
 
             <button type="submit">Save</button>
             <button type="reset">Reset</button>
-<!--           <a href="${deleteUrl}">Start</a>-->
-<!--            <input type="button"  onclick="location.href="${deleteUrl}" value="Register" >-->
-            <form action="${deleteUrl}" method="get">
-                <input type="submit" name="button1" value="Button 1" />
-            </form>
+           <a href="${deleteUrl}">Start</a>
+
+<!--            <form action="${deleteUrl}" method="get">-->
+<!--                <input type="submit" name="button1" value="Button 1" />-->
+<!--            </form>-->
            </form:form>
     </div>
 </div>

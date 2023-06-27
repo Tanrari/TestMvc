@@ -50,6 +50,7 @@ public class SingerController {
                             new Object[]{}, locale)));
 //            System.out.println(singer.getBirthDate()+"!!!!");
             uiModel.addAttribute("singer", singer);
+
             return "singers/update";
         }
         uiModel.asMap().clear();
@@ -84,18 +85,18 @@ public class SingerController {
                 messageSource.getMessage("singer_save_success", new Object[]{},locale)));
         logger.info("Singer id:"+ singer.getId());
         singerService.save(singer);
-        return "redirect:/singers/";
+        return "redirect:/singers/list";
 
     }
 
-    @RequestMapping(params = "form", method = RequestMethod.GET)
+    @RequestMapping(params = "create", method = RequestMethod.GET)
     public String createForm(Model uiModel){
-        Singer singer = new Singer();
-        uiModel.addAttribute("singer", singer);
-        return "singers/create";
+    Singer singer = new Singer();
+      uiModel.addAttribute("singer", singer);
+        return "singers/update";
     }
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET, value = "/list")
     public String list(Model model){
         logger.info("Listing singers");
         List<Singer> singers = singerService.findAll();
@@ -110,6 +111,7 @@ public class SingerController {
         Singer singer = singerService.findById(id);
         System.out.println(singer.toString());
         uiModel.addAttribute("singer", singer);
+        System.out.println("Показываю");
         return "singers/show";
     }
 
@@ -117,8 +119,8 @@ public class SingerController {
     public String delete(@PathVariable("id") Long id){
         logger.info("+123");
         System.out.println("11123123");
-//        singerService.delete(id);
-        return "singers";
+        singerService.delete(id);
+        return "redirect:/singers/list";
 
     }
 
