@@ -3,14 +3,13 @@
      xmlns:spring="http://www.springframework.org/tags" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8" />
     <jsp:output omit-xml-declaration="yes" />
-
     <spring:message code="home_text" var="homeText"/>
     <spring:message code="label_en_US" var="labelEnUs"/>
     <spring:message code="label_zh_HK" var="labelZhHk"/>
-    <spring:url value="/singers" var="homeUrl"/>
-    <spring:url value="/singers" var="showSingerUrl"/>
+    <spring:url value="/singers/list" var="homeUrl"/>
+    <spring:url value="/singers/list" var="showSingerUrl"/>
     <a href="${homeUrl}">${homeText}</a> |
     <a href="${homeUrl}?locale=en_US">${labelEnUs}</a> |
     <a href="${homeUrl}?locale=zh_HK">${labelZhHk}</a>
-    <a href="${showSingerUrl}/${singer.id}"></a>
+<!--    <a href="${showSingerUrl}/${singer.id}"></a>-->
 </div>
